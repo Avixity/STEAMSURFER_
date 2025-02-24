@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science - Steam Surfer</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: black;
+            color: white;
+            padding: 25px;
+            font-size: 32px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: padding 0.3s ease-in-out;
+        }
+        header.shrink {
+            padding: 10px;
+            font-size: 24px;
+        }
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 40px;
+            margin-left: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .logo:hover {
+            transform: scale(1.1);
+            color: darkgray;
+        }
+        .search-box {
+            margin-right: 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .search-box input {
+            padding: 8px 30px 8px 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            width: 250px;
+        }
+        .search-box button {
+            padding: 8px 15px;
+            font-size: 16px;
+            border: none;
+            background-color: white;
+            color: black;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .search-box button:hover {
+            background-color: #e6e6e6;
+        }
+        .content {
+            margin: 140px auto 50px;
+            max-width: 1000px;
+            font-size: 22px;
+            line-height: 2;
+            text-align: left;
+        }
+        .content h2 {
+            font-size: 30px;
+            margin-top: 40px;
+        }
+        .content ul {
+            list-style-type: square;
+            padding-left: 40px;
+        }
+        .content a {
+            color: blue;
+            text-decoration: none;
+        }
+        .content a:hover {
+            text-decoration: underline;
+        }
+        .coming-soon {
+            margin-top: 80px;
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+        }
+        footer {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            font-size: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        window.addEventListener("scroll", function() {
+            var header = document.querySelector("header");
+            if (window.scrollY > 50) {
+                header.classList.add("shrink");
+            } else {
+                header.classList.remove("shrink");
+            }
+        });
+
+        // Function to smoothly scroll to the top when clicking the "SCIENCE" logo
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+
+        // Function to handle search action
+        function handleSearch() {
+            var searchQuery = document.getElementById('search-input').value.toLowerCase();
+            var listItems = document.querySelectorAll('.scientific-field');
+
+            listItems.forEach(function(item) {
+                var text = item.textContent.toLowerCase();
+                if (text.includes(searchQuery)) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo" onclick="scrollToTop()">
+            SCIENCE
+        </div>
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Search..." onkeyup="handleSearch()">
+            <button onclick="window.location.href='Home.html';">Home</button>
+        </div>
+    </header>
+    
+    <section class="content">
+        <h2>What is Science?</h2>
+        <p>Science is the systematic study of the natural world through observation, experimentation, and analysis. It helps us understand fundamental concepts of life, matter, and the universe, shaping innovations that impact our daily lives.</p>
+        
+        <h2>Scientific Fields</h2>
+        <ul>
+            <li class="scientific-field"><strong>Aeronautics:</strong> Science of flight. <a href="https://www.nasa.gov/aeronautics/">Learn more</a></li>
+            <li class="scientific-field"><strong>Agriculture:</strong> Science of farming and food production. <a href="https://www.usda.gov/">Learn more</a></li>
+            <li class="scientific-field"><strong>Anthropology:</strong> Study of human societies and cultures. <a href="https://www.americananthro.org/">Learn more</a></li>
+            <li class="scientific-field"><strong>Archaeology:</strong> Study of past human societies through material remains. <a href="https://www.archaeological.org/">Learn more</a></li>
+            <li class="scientific-field"><strong>Astronomy:</strong> Study of celestial objects. <a href="https://science.nasa.gov/astronomy/">Learn more</a></li>
+            <li class="scientific-field"><strong>Astrophysics:</strong> Physics of celestial objects. <a href="https://www.aip.org/">Learn more</a></li>
+            <li class="scientific-field"><strong>Biochemistry:</strong> Chemistry of living organisms. <a href="https://www.asbmb.org/">Learn more</a></li>
+            <li class="scientific-field"><strong>Biology:</strong> Study of living organisms. <a href="https://www.nigms.nih.gov/education/pages/factsheet_biology.aspx">Learn more</a></li>
+            <li class="scientific-field"><strong>Biomechanics:</strong> Study of the mechanics of living organisms. <a href="https://asbweb.org/">Learn more</a></li>
+            <li class="scientific-field"><strong>Botany:</strong> Study of plants. <a href="https://botany.org/">Learn more</a></li>
+            <li class="scientific-field"><strong>Chemistry:</strong> Study of matter and its properties. <a href="https://www.acs.org/">Learn more</a></li>
+            <li class="scientific-field"><strong>Ecology:</strong> Study of ecosystems and organisms' interactions. <a href="https://www.esa.org/">Learn more</a></li>
+            <li class="scientific-field"><strong>Geology:</strong> Study of the Earth and its materials. <a href="https://www.geosociety.org/">Learn more</a></li>
+            <li class="scientific-field"><strong>Genetics:</strong> Study of heredity and genes. <a href="https://www.genetics.org/">Learn more</a></li>
+            <li class="scientific-field"><strong>Immunology:</strong> Study of the immune system. <a href="https://www.aai.org/">Learn more</a></li>
+            <li class="scientific-field"><strong>Marine Biology:</strong> Study of ocean ecosystems and organisms. <a href="https://www.marinesciences.org/">Learn more</a></li>
+            <li class="scientific-field"><strong>Mathematics:</strong> Study of numbers, shapes, and patterns. <a href="https://www.ams.org/">Learn more</a></li>
+            <li class="scientific-field"><strong>Microbiology:</strong> Study of microorganisms. <a href="https://www.asm.org/">Learn more</a></li>
+            <li class="scientific-field"><strong>Neurology:</strong> Study of the nervous system. <a href="https://www.aan.com/">Learn more</a></li>
+            <li class="scientific-field"><strong>Oceanography:</strong> Study of oceans and their processes. <a href="https://www.oceanexplorer.noaa.gov/">Learn more</a></li>
+            <li class="scientific-field"><strong>Pharmacology:</strong> Study of drugs and their effects on the body. <a href="https://www.aspet.org/">Learn more</a></li>
+            <li class="scientific-field"><strong>Physics:</strong> Study of matter, energy, and forces. <a href="https://www.aip.org/">Learn more</a></li>
+            <li class="scientific-field"><strong>Psychology:</strong> Study of the human mind and behavior. <a href="https://www.apa.org/">Learn more</a></li>
+            <li class="scientific-field"><strong>Quantum Mechanics:</strong> Study of subatomic particles and their behavior. <a href="https://www.aps.org/">Learn more</a></li>
+            <li class="scientific-field"><strong>Zoology:</strong> Study of animals and their behavior. <a href="https://www.zoology.org/">Learn more</a></li>
+
+        </ul>
+    </section>
+    
+    <footer>
+        Made By Aaryan Sehgal | Contact: aaryan.sehgal18@gmail.com
+    </footer>
+</body>
+</html>

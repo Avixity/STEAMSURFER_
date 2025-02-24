@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - Steam Surfer</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            font-size: 32px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            animation: slideInHeader 1s ease-in-out;
+        }
+
+        @keyframes slideInHeader {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 40px;
+            margin-left: 20px;
+        }
+
+        .home-button {
+            background-color: #808080; /* Grey color */
+            color: white;
+            padding: 20px 40px;
+            font-size: 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 50px;
+            animation: fadeInButton 2s ease-in-out;
+        }
+
+        @keyframes fadeInButton {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .home-button:hover {
+            background-color: #666666; /* Darker grey on hover */
+        }
+
+        .big-message {
+            margin-top: 50px; /* Equal spacing from button */
+            font-size: 40px;
+            font-weight: bold;
+            color: black; /* Black color for the message */
+            animation: fadeInBigMessage 2s ease-in-out;
+        }
+
+        @keyframes fadeInBigMessage {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Add space before the image and make it larger */
+        .sad-image {
+            width: 500px; /* Larger image size */
+            margin-top: 80px; /* Increased space before the image */
+            animation: fadeInImage 2s ease-in-out;
+        }
+
+        @keyframes fadeInImage {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            font-size: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">STEAM SURFER</div>
+    </header>
+    
+    <!-- Sad Image -->
+    <img src="sad.jpg" alt="Sad Image" class="sad-image">
+
+    <!-- Big Message -->
+    <div class="big-message">
+        STILL IN DEVELOPMENT :( <br> We are working hard to bring you exciting content. Stay with us!
+    </div>
+
+    <!-- Home Button -->
+    <div>
+        <button class="home-button" onclick="window.location.href='Home.html';">Go to Home</button>
+    </div>
+
+    <!-- Footer with Updated Information -->
+    <footer>
+        Made By Aaryan Sehgal | Contact: aaryan.sehgal18@gmail.com
+    </footer>
+</body>
+</html>
